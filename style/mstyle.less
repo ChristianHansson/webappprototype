@@ -1,0 +1,232 @@
+out: mainstyle.css
+@settingsColor: rgba(154, 67, 9, 1);
+body,html,h3,ul{
+  height: 100%;
+  padding:0px;
+  margin:0px;
+  font-family: 'Roboto', sans-serif;
+}
+a,a:hover,a:visited,a:active{
+  color: inherit;
+  text-decoration: none;
+}
+.wrapper{
+  .container{
+    Qmargin:0px auto;
+    Qbackground:rgba(78, 85, 212, 0.3);
+    position: relative;
+    // default
+    .header{
+      background:purple;
+      text-align: center;
+      padding: 10px;
+      .header-icon{
+        text-align: right;
+        width: 20px;
+      }
+      h3{
+        display: inline-block;
+        font-size: 1.5em;
+      }
+      .back-provider-wrapper{
+        display: inline-block;
+        float: left;
+      }
+      .settings-icon-wrapper{
+        display: inline-block;
+        float: right;
+      }
+    }
+    .left-wrapper{
+      float: left;
+      min-width: 100%;
+      .child{
+        .ul{
+          li{
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e9f6fd+0,d3eefb+100;Blue+3D+%233 */
+            background: rgb(233,246,253); /* Old browsers */
+            background: -moz-linear-gradient(top,  rgba(233,246,253,1) 0%, rgba(211,238,251,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  rgba(233,246,253,1) 0%,rgba(211,238,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  rgba(233,246,253,1) 0%,rgba(211,238,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9f6fd', endColorstr='#d3eefb',GradientType=0 ); /* IE6-9 */
+            border: 2px solid rgba(0, 0, 0, 1);
+            margin: 1px;
+            font-size: 14pt;
+            Qfont-size: 1.2em;
+            a{
+              display: block;
+            }
+            .menu-icon{
+              display: inline-block;
+              vertical-align: middle;
+            }
+            .cat-name-span{
+              vertical-align: middle;
+              display: inline-block;
+              line-height: 20px;
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+    }
+    .content{
+      overflow: hidden;
+      Qmargin-left: 100%;
+      float: left;
+      min-width: 320px;
+      ul{
+        li{
+          background: black;
+          color: white;
+          margin: 1px;
+          Qbackground: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+          img{
+            max-width: 100%;
+          }
+          div{
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .content-sub-item{
+      min-width: 320px;
+      img{
+        display: block;
+        max-width: 100%;
+      }
+    }
+  }
+}
+// ul styling
+ul{
+  list-style: none;
+  li{
+    padding: 5px;
+    Qbackground:yellow;
+  }
+}
+// image styling
+.menu-icon{
+  width: 25px;
+}
+// active or not active link
+.isActiveLink{
+  visibility: visible;
+}
+.isNotActiveLink{
+  visibility: hidden;
+}
+
+// register styling
+.reg-wrapper{
+  width:100%;
+  .reg-header{
+    display: block;
+    Qtext-align: center;
+    background: purple;
+    height: 20vh;
+    padding-top: 1px;
+    margin-top: -1px;
+    .reg-text-head{
+      text-align: center;
+      margin-top: 20px;
+      h1{
+        font-size: 32px;
+      }
+    }
+  }
+  .reg-content{
+    margin: 5px;
+    display: block;
+    text-align: center;
+    input{
+      text-align: center;
+      margin-top: 4px;
+      border: none;
+      display: block;
+      height: 80px;
+      width: 100%;
+    }
+    input[type=text]{
+      font-size: 34px;
+      border-bottom: solid 2px #c9c9c9;
+      transition: border 0.3s;
+    }
+    input[type=text]:focus{
+      border-bottom: solid 2px #969696;
+    }
+  }
+  .reg-footer{
+    margin-top: 10px;
+    .reg-submit-holder{
+      max-width: 265px;
+      display: block;
+      width: 30vw;
+      margin: 0 auto;
+      text-align: center;
+      a{
+        h3{
+          -webkit-box-shadow: inset 0px 0px 15px 0px rgba(255,255,255,1);
+          -moz-box-shadow: inset 0px 0px 15px 0px rgba(255,255,255,1);
+          box-shadow: inset 0px 0px 15px 0px rgba(255,255,255,1);
+          background: rgba(0,0,0,0.1);
+          padding: 15px;
+          max-width: 40vw;
+          display:block;
+          font-size: 14px;
+          border: solid 2px #575249;
+        }
+      }
+    }
+    .reg-company-img-wrapper{
+      display: block;
+      margin-top: 20px;
+      img{
+        display: block;
+        margin: 0 auto;
+        width: 120px;
+      }
+    }
+  }
+}
+
+// popupSettings styling
+.popup-wrapper{
+  display: none;
+  height: 90vh;
+  width: 90vw;
+  position: fixed;
+  background:@settingsColor;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  overflow: auto;
+  .popup-header{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 5% 2% 5% 2%;
+    text-align: center;
+    p{
+      display: inline;
+      margin-top: 2%;
+    }
+    .close-popup{
+      float: right;
+      display: inline;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close-popup:hover, .close-popup:focus{
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}

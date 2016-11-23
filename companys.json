@@ -1,0 +1,9 @@
+{"companys":
+  {
+    "columns":["compId","compCategoryId","compName","compImgIcon"],
+    "records":[
+      ["1","homeandgarden","Handelstr\u00e4dg\u00e5rden","img\/companyimg\/handelstradgarden.png"],
+      ["2","sport","N\u00e5gon Sportbutik","img\/companyimg\/handelstradgarden.png"]
+      ]
+      }
+    }

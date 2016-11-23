@@ -1,0 +1,10 @@
+{"categorys":
+  {"columns":["id","linkName","categoryIconSource","categoryName"],
+    "records":[
+      ["1","sport","img\/icon\/sport.png","Sport"],
+      ["2","restaurant","img\/icon\/restaurant.png","Restaurant"],
+      ["3","homeandgarden","img\/icon\/homeandgarden.jpg","Hem och tradgard"],
+      ["4","electronics","img\/icon\/electronics.png","Elektronik"]
+      ]
+      }
+    }
