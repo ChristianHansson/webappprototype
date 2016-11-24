@@ -1,5 +1,7 @@
 out: mainstyle.css
 @settingsColor: rgba(154, 67, 9, 1);
+@noziaMainBlue: #1ab5e1;
+@noziaMainBlueTrans: rgba(26, 181, 224, 0.5);
 body,html,h3,ul{
   height: 100%;
   padding:0px;
@@ -37,19 +39,19 @@ a,a:hover,a:visited,a:active{
         float: right;
       }
     }
-    .left-wrapper{
+    .cat-menu-wrapper{
       float: left;
       min-width: 100%;
       .child{
         .ul{
           li{
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e9f6fd+0,d3eefb+100;Blue+3D+%233 */
-            background: rgb(233,246,253); /* Old browsers */
+            background: @noziaMainBlue; //rgb(233,246,253); /* Old browsers */
             background: -moz-linear-gradient(top,  rgba(233,246,253,1) 0%, rgba(211,238,251,1) 100%); /* FF3.6-15 */
             background: -webkit-linear-gradient(top,  rgba(233,246,253,1) 0%,rgba(211,238,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
             background: linear-gradient(to bottom,  rgba(233,246,253,1) 0%,rgba(211,238,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9f6fd', endColorstr='#d3eefb',GradientType=0 ); /* IE6-9 */
-            border: 2px solid rgba(0, 0, 0, 1);
+            border-bottom: 2px solid rgba(0, 0, 0, 1);
             margin: 1px;
             font-size: 14pt;
             Qfont-size: 1.2em;
@@ -122,19 +124,26 @@ ul{
 
 // register styling
 .reg-wrapper{
+  Qbackground-image: url(http://www.publicdomainpictures.net/pictures/30000/velka/this-winter-135439096360z.jpg);
+  Qbackground: rgba(153, 0, 38, 0.2);
+  background-image: url(http://wallyourpaper.com/wp-content/uploads/2016/04/white_hd_wallpaper_blury_rose-768x480.jpg);
+  background-size: cover;
+  Qopacity: 0.5;
   width:100%;
+  height: 100%;
   .reg-header{
     display: block;
     Qtext-align: center;
-    background: purple;
-    height: 20vh;
+    Qbackground: rgba(68, 61, 255, 0.62);
+    background: @noziaMainBlueTrans;
+    height: 10vh;
     padding-top: 1px;
     margin-top: -1px;
     .reg-text-head{
       text-align: center;
-      margin-top: 20px;
+      margin-top: 5px;
       h1{
-        font-size: 32px;
+        font-size: 24px;
       }
     }
   }
@@ -142,22 +151,59 @@ ul{
     margin: 5px;
     display: block;
     text-align: center;
-    input{
+    div input{
+      font-weight: bold;
       text-align: center;
-      margin-top: 4px;
-      border: none;
-      display: block;
-      height: 80px;
-      width: 100%;
+      font-size: 18px;
     }
-    input[type=text]{
-      font-size: 34px;
-      border-bottom: solid 2px #c9c9c9;
-      transition: border 0.3s;
+    div input[type=text]{
+      border-bottom: 2px solid @noziaMainBlue;
     }
-    input[type=text]:focus{
-      border-bottom: solid 2px #969696;
+    div input[type=text]:focus{
+      border-bottom: 2px solid @noziaMainBlue;
     }
+    .inline-input-holder{
+      margin: 4px 0px 0px 0px;
+      display: inline-block;
+      input{
+        width: 45%;
+        background: none;
+        height: 50px;
+        border: none;
+      }
+    }
+    .single-input-holder{
+      margin: 4px 0px 0px 0px;
+      input{
+        background: none;
+        display: block;
+        height: 50px;
+        border: none;
+        width: 100%;
+      }
+    }
+
+    // .inline-input-holder{
+    //   display: inline-block;
+    //   width: 100%;
+    //   input{
+    //     background: none;
+    //     text-align: center;
+    //     margin-top: 4px;
+    //     border: none;
+    //     display: block;
+    //     height: 60px;
+    //     Qwidth: 100%;
+    //   }
+    //   input[type=text]{
+    //     font-size: 24px;
+    //     border-bottom: solid 2px #c9c9c9;
+    //     transition: border 0.3s;
+    //   }
+    //   input[type=text]:focus{
+    //     border-bottom: solid 2px #969696;
+    //   }
+    // }
   }
   .reg-footer{
     margin-top: 10px;
@@ -169,25 +215,28 @@ ul{
       text-align: center;
       a{
         h3{
-          -webkit-box-shadow: inset 0px 0px 15px 0px rgba(255,255,255,1);
-          -moz-box-shadow: inset 0px 0px 15px 0px rgba(255,255,255,1);
-          box-shadow: inset 0px 0px 15px 0px rgba(255,255,255,1);
-          background: rgba(0,0,0,0.1);
-          padding: 15px;
+          -webkit-box-shadow: inset 0px 0px 15px 0px @noziaMainBlue;
+          -moz-box-shadow: inset 0px 0px 15px 0px @noziaMainBlue;
+          box-shadow: inset 0px 0px 15px 0px @noziaMainBlue;
+          background:@noziaMainBlue;
+          padding: 10px;
           max-width: 40vw;
           display:block;
           font-size: 14px;
-          border: solid 2px #575249;
+          border: solid 2px @noziaMainBlue;
+          border-radius: 40px;
         }
       }
     }
     .reg-company-img-wrapper{
       display: block;
-      margin-top: 20px;
+      Qmargin-top: 20px;
+      margin: 10px auto 0 auto;
+      width: 200px;
       img{
-        display: block;
+        Qdisplay: none;
         margin: 0 auto;
-        width: 120px;
+        width: 200px;
       }
     }
   }

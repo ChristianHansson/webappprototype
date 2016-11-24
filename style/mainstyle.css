@@ -40,14 +40,13 @@ a:active {
   display: inline-block;
   float: right;
 }
-.wrapper .container .left-wrapper {
+.wrapper .container .cat-menu-wrapper {
   float: left;
   min-width: 100%;
 }
-.wrapper .container .left-wrapper .child .ul li {
+.wrapper .container .cat-menu-wrapper .child .ul li {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e9f6fd+0,d3eefb+100;Blue+3D+%233 */
-  background: #e9f6fd;
-  /* Old browsers */
+  background: #1ab5e1;
   background: -moz-linear-gradient(top, #e9f6fd 0%, #d3eefb 100%);
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #e9f6fd 0%, #d3eefb 100%);
@@ -56,19 +55,19 @@ a:active {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9f6fd', endColorstr='#d3eefb', GradientType=0);
   /* IE6-9 */
-  border: 2px solid #000000;
+  border-bottom: 2px solid #000000;
   margin: 1px;
   font-size: 14pt;
   Qfont-size: 1.2em;
 }
-.wrapper .container .left-wrapper .child .ul li a {
+.wrapper .container .cat-menu-wrapper .child .ul li a {
   display: block;
 }
-.wrapper .container .left-wrapper .child .ul li .menu-icon {
+.wrapper .container .cat-menu-wrapper .child .ul li .menu-icon {
   display: inline-block;
   vertical-align: middle;
 }
-.wrapper .container .left-wrapper .child .ul li .cat-name-span {
+.wrapper .container .cat-menu-wrapper .child .ul li .cat-name-span {
   vertical-align: middle;
   display: inline-block;
   line-height: 20px;
@@ -117,43 +116,65 @@ ul li {
   visibility: hidden;
 }
 .reg-wrapper {
+  Qbackground-image: url(http://www.publicdomainpictures.net/pictures/30000/velka/this-winter-135439096360z.jpg);
+  Qbackground: rgba(153, 0, 38, 0.2);
+  background-image: url(http://wallyourpaper.com/wp-content/uploads/2016/04/white_hd_wallpaper_blury_rose-768x480.jpg);
+  background-size: cover;
+  Qopacity: 0.5;
   width: 100%;
+  height: 100%;
 }
 .reg-wrapper .reg-header {
   display: block;
   Qtext-align: center;
-  background: purple;
-  height: 20vh;
+  Qbackground: rgba(68, 61, 255, 0.62);
+  background: rgba(26, 181, 224, 0.5);
+  height: 10vh;
   padding-top: 1px;
   margin-top: -1px;
 }
 .reg-wrapper .reg-header .reg-text-head {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 .reg-wrapper .reg-header .reg-text-head h1 {
-  font-size: 32px;
+  font-size: 24px;
 }
 .reg-wrapper .reg-content {
   margin: 5px;
   display: block;
   text-align: center;
 }
-.reg-wrapper .reg-content input {
+.reg-wrapper .reg-content div input {
+  font-weight: bold;
   text-align: center;
-  margin-top: 4px;
+  font-size: 18px;
+}
+.reg-wrapper .reg-content div input[type=text] {
+  border-bottom: 2px solid #1ab5e1;
+}
+.reg-wrapper .reg-content div input[type=text]:focus {
+  border-bottom: 2px solid #1ab5e1;
+}
+.reg-wrapper .reg-content .inline-input-holder {
+  margin: 4px 0px 0px 0px;
+  display: inline-block;
+}
+.reg-wrapper .reg-content .inline-input-holder input {
+  width: 45%;
+  background: none;
+  height: 50px;
   border: none;
+}
+.reg-wrapper .reg-content .single-input-holder {
+  margin: 4px 0px 0px 0px;
+}
+.reg-wrapper .reg-content .single-input-holder input {
+  background: none;
   display: block;
-  height: 80px;
+  height: 50px;
+  border: none;
   width: 100%;
-}
-.reg-wrapper .reg-content input[type=text] {
-  font-size: 34px;
-  border-bottom: solid 2px #c9c9c9;
-  transition: border 0.3s;
-}
-.reg-wrapper .reg-content input[type=text]:focus {
-  border-bottom: solid 2px #969696;
 }
 .reg-wrapper .reg-footer {
   margin-top: 10px;
@@ -166,24 +187,27 @@ ul li {
   text-align: center;
 }
 .reg-wrapper .reg-footer .reg-submit-holder a h3 {
-  -webkit-box-shadow: inset 0px 0px 15px 0px #ffffff;
-  -moz-box-shadow: inset 0px 0px 15px 0px #ffffff;
-  box-shadow: inset 0px 0px 15px 0px #ffffff;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  -webkit-box-shadow: inset 0px 0px 15px 0px #1ab5e1;
+  -moz-box-shadow: inset 0px 0px 15px 0px #1ab5e1;
+  box-shadow: inset 0px 0px 15px 0px #1ab5e1;
+  background: #1ab5e1;
+  padding: 10px;
   max-width: 40vw;
   display: block;
   font-size: 14px;
-  border: solid 2px #575249;
+  border: solid 2px #1ab5e1;
+  border-radius: 40px;
 }
 .reg-wrapper .reg-footer .reg-company-img-wrapper {
   display: block;
-  margin-top: 20px;
+  Qmargin-top: 20px;
+  margin: 10px auto 0 auto;
+  width: 200px;
 }
 .reg-wrapper .reg-footer .reg-company-img-wrapper img {
-  display: block;
+  Qdisplay: none;
   margin: 0 auto;
-  width: 120px;
+  width: 200px;
 }
 .popup-wrapper {
   display: none;

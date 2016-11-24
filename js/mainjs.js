@@ -42,6 +42,7 @@ $j(document).on("click", "#cat-list-reff li a", function(e){
   var pageTitle = $j(this).find(".cat-name-span").html();
   var parent = $j("#target-for-insert-content");
   getSubCategory(parent, name, pageTitle);
+  window.history.pushState({foo: "bar"}, "http://");
 });
 function getCategory(){
     var parent = $j("#target-for-insert-content");
