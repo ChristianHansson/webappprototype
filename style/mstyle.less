@@ -7,19 +7,23 @@ body,html,h3,ul{
   padding:0px;
   margin:0px;
   font-family: 'Roboto', sans-serif;
+
 }
 a,a:hover,a:visited,a:active{
   color: inherit;
   text-decoration: none;
 }
 .wrapper{
+  background-image: url(http://wallyourpaper.com/wp-content/uploads/2016/04/white_hd_wallpaper_blury_rose-768x480.jpg);
+  background-size: cover;
+  height: 100%;
   .container{
     Qmargin:0px auto;
     Qbackground:rgba(78, 85, 212, 0.3);
-    position: relative;
+    Qposition: relative;
     // default
     .header{
-      background:purple;
+      background:@noziaMainBlue;
       text-align: center;
       padding: 10px;
       .header-icon{
@@ -72,6 +76,7 @@ a,a:hover,a:visited,a:active{
         }
       }
     }
+    // submenucontent
     .content{
       overflow: hidden;
       Qmargin-left: 100%;
@@ -80,15 +85,30 @@ a,a:hover,a:visited,a:active{
       ul{
         li{
           background: black;
-          color: white;
+          color: inherit;
           margin: 1px;
-          Qbackground: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+          background: @noziaMainBlue; //rgb(233,246,253); /* Old browsers */
+          background: -moz-linear-gradient(top,  rgba(233,246,253,1) 0%, rgba(211,238,251,1) 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top,  rgba(233,246,253,1) 0%,rgba(211,238,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom,  rgba(233,246,253,1) 0%,rgba(211,238,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9f6fd', endColorstr='#d3eefb',GradientType=0 ); /* IE6-9 */
+          border-bottom: 1px solid rgba(0,0,0,1);
           img{
             max-width: 100%;
           }
           div{
+            font-size: 14pt;
             width: 100%;
-            text-align: center;
+            Qtext-align: center;
+          }
+          a{
+            display: block;
+          }
+          .name-ref{
+            vertical-align: middle;
+            display: inline-block;
+            line-height: 20px;
+            margin-left: 20px;
           }
         }
       }
@@ -159,7 +179,10 @@ ul{
     div input[type=text]{
       border-bottom: 2px solid @noziaMainBlue;
     }
-    div input[type=text]:focus{
+    div input[type=password]{
+      border-bottom: 2px solid @noziaMainBlue;
+    }
+    div input:focus{
       border-bottom: 2px solid @noziaMainBlue;
     }
     .inline-input-holder{
@@ -182,28 +205,6 @@ ul{
         width: 100%;
       }
     }
-
-    // .inline-input-holder{
-    //   display: inline-block;
-    //   width: 100%;
-    //   input{
-    //     background: none;
-    //     text-align: center;
-    //     margin-top: 4px;
-    //     border: none;
-    //     display: block;
-    //     height: 60px;
-    //     Qwidth: 100%;
-    //   }
-    //   input[type=text]{
-    //     font-size: 24px;
-    //     border-bottom: solid 2px #c9c9c9;
-    //     transition: border 0.3s;
-    //   }
-    //   input[type=text]:focus{
-    //     border-bottom: solid 2px #969696;
-    //   }
-    // }
   }
   .reg-footer{
     margin-top: 10px;
@@ -237,6 +238,43 @@ ul{
         Qdisplay: none;
         margin: 0 auto;
         width: 200px;
+      }
+    }
+  }
+  .login-footer{
+    margin-top: 20px;
+    .login-submit-holder{
+      Qmax-width: 320px;
+      display: block;
+      width: 100vw;
+      margin: 0 auto;
+      text-align: center;
+      a{
+        display: inline-block;;
+        h3{
+          -webkit-box-shadow: inset 0px 0px 15px 0px @noziaMainBlue;
+          -moz-box-shadow: inset 0px 0px 15px 0px @noziaMainBlue;
+          box-shadow: inset 0px 0px 15px 0px @noziaMainBlue;
+          background:@noziaMainBlue;
+          padding: 10px;
+          Qmax-width: 40vw;
+          min-width: 30vw;
+          display:block;
+          font-size: 14px;
+          border: solid 2px @noziaMainBlue;
+          border-radius: 40px;
+        }
+      }
+    }
+    .login-company-img-wrapper{
+      display: block;
+      Qmargin-top: 20px;
+      margin: 70px auto 0 auto;
+      width: 230px;
+      img{
+        Qdisplay: none;
+        margin: 0 auto;
+        width: 230px;
       }
     }
   }

@@ -1,6 +1,28 @@
 var $j = jQuery.noConflict();
 var urlHost = "http://localhost/prototypappapi/api.php/";
 var userName, city;
+var currentPage;
+$j(function(){
+
+  $j(document).on("click", "a", function(){
+    var d = $j(this).attr("href");
+    window.history.pushState({data: d}, d, d);
+    //console.dir(d);
+  });
+  $j(window).on("popstate", function(e){
+    if(e.state == null){
+      if (currentPage == 2 || currentPage == 3) {
+        getCategory();
+      }
+    }else{
+      console.dir(e.state ? e.state.data : null);
+    }
+  });
+  // window.onpopstate = function(e){
+  //     console.dir(e.state ? e.state.data : null);
+  // };
+
+});
 $j(document).ready(function(){
   var qs = (function(a){
     if (a == "") return {};
@@ -19,6 +41,7 @@ $j(document).ready(function(){
   city = qs['city'];
   // console.dir(userName);
   // console.dir(city);
+  // Fix this, retarded rerouting to this.
   getCategory();
   // closing popupmenu
   var close_popup = $j("#close-popup-selector");
@@ -42,9 +65,12 @@ $j(document).on("click", "#cat-list-reff li a", function(e){
   var pageTitle = $j(this).find(".cat-name-span").html();
   var parent = $j("#target-for-insert-content");
   getSubCategory(parent, name, pageTitle);
-  window.history.pushState({foo: "bar"}, "http://");
+
+
 });
 function getCategory(){
+  currentPage = 1;
+  window.history.pushState({data: "d"}, "kategorier", "Kategorier");
     var parent = $j("#target-for-insert-content");
     $j(parent).load("/menu.html", function(){
       var backBtn = $j("#back-provider-button");
@@ -78,12 +104,14 @@ $j(document).on("click", "#sub-item-click", function(e){
   displaySubItem(parent, id, title);
 });
 function displaySubItem(parent, id, pageTitle){
+  currentPage = 3;
   $j(parent).load("subitem.html", function(){
     var p = $j(parent).find("#page-title-text");
     $j(p).html(pageTitle);
   });
 }
 function getSubCategory(parent, name, pageTitle){
+  currentPage = 2;
   $j(parent).load("content.html", function(){
     var p = $j(parent).find("#page-title-text");
     $j(p).html(pageTitle);
@@ -97,9 +125,7 @@ function getSubCategory(parent, name, pageTitle){
           if(obj[1] == name){
             var what = '<li><a id="sub-item-click" href="'+obj[0]+'"><div class="name-ref">'
             +obj[2]+
-            '</div><img src="'
-            +obj[3]+
-            '" alt="noicon" /></a></li>';
+            '</div></a></li>';
             targetUl.append(what);
           }
         });

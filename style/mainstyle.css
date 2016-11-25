@@ -14,13 +14,18 @@ a:active {
   color: inherit;
   text-decoration: none;
 }
+.wrapper {
+  background-image: url(http://wallyourpaper.com/wp-content/uploads/2016/04/white_hd_wallpaper_blury_rose-768x480.jpg);
+  background-size: cover;
+  height: 100%;
+}
 .wrapper .container {
   Qmargin: 0px auto;
   Qbackground: rgba(78, 85, 212, 0.3);
-  position: relative;
+  Qposition: relative;
 }
 .wrapper .container .header {
-  background: purple;
+  background: #1ab5e1;
   text-align: center;
   padding: 10px;
 }
@@ -81,16 +86,35 @@ a:active {
 }
 .wrapper .container .content ul li {
   background: black;
-  color: white;
+  color: inherit;
   margin: 1px;
-  Qbackground: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+  background: #1ab5e1;
+  background: -moz-linear-gradient(top, #e9f6fd 0%, #d3eefb 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e9f6fd 0%, #d3eefb 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e9f6fd 0%, #d3eefb 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9f6fd', endColorstr='#d3eefb', GradientType=0);
+  /* IE6-9 */
+  border-bottom: 1px solid #000000;
 }
 .wrapper .container .content ul li img {
   max-width: 100%;
 }
 .wrapper .container .content ul li div {
+  font-size: 14pt;
   width: 100%;
-  text-align: center;
+  Qtext-align: center;
+}
+.wrapper .container .content ul li a {
+  display: block;
+}
+.wrapper .container .content ul li .name-ref {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 20px;
+  margin-left: 20px;
 }
 .wrapper .container .content-sub-item {
   min-width: 320px;
@@ -153,7 +177,10 @@ ul li {
 .reg-wrapper .reg-content div input[type=text] {
   border-bottom: 2px solid #1ab5e1;
 }
-.reg-wrapper .reg-content div input[type=text]:focus {
+.reg-wrapper .reg-content div input[type=password] {
+  border-bottom: 2px solid #1ab5e1;
+}
+.reg-wrapper .reg-content div input:focus {
   border-bottom: 2px solid #1ab5e1;
 }
 .reg-wrapper .reg-content .inline-input-holder {
@@ -208,6 +235,43 @@ ul li {
   Qdisplay: none;
   margin: 0 auto;
   width: 200px;
+}
+.reg-wrapper .login-footer {
+  margin-top: 20px;
+}
+.reg-wrapper .login-footer .login-submit-holder {
+  Qmax-width: 320px;
+  display: block;
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+}
+.reg-wrapper .login-footer .login-submit-holder a {
+  display: inline-block;
+}
+.reg-wrapper .login-footer .login-submit-holder a h3 {
+  -webkit-box-shadow: inset 0px 0px 15px 0px #1ab5e1;
+  -moz-box-shadow: inset 0px 0px 15px 0px #1ab5e1;
+  box-shadow: inset 0px 0px 15px 0px #1ab5e1;
+  background: #1ab5e1;
+  padding: 10px;
+  Qmax-width: 40vw;
+  min-width: 30vw;
+  display: block;
+  font-size: 14px;
+  border: solid 2px #1ab5e1;
+  border-radius: 40px;
+}
+.reg-wrapper .login-footer .login-company-img-wrapper {
+  display: block;
+  Qmargin-top: 20px;
+  margin: 70px auto 0 auto;
+  width: 230px;
+}
+.reg-wrapper .login-footer .login-company-img-wrapper img {
+  Qdisplay: none;
+  margin: 0 auto;
+  width: 230px;
 }
 .popup-wrapper {
   display: none;
