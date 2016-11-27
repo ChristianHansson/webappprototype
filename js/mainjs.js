@@ -1,26 +1,67 @@
 var $j = jQuery.noConflict();
 var urlHost = "http://localhost/prototypappapi/api.php/";
 var userName, city;
-var currentPage;
+var currentPage = 4;
+var parent = $j("#target-for-insert-content");
+var tempName, tempPageTitle;
+$j(document).ready(function(e){
+  if(currentPage !== 1){
+    window.history.pushState({data: "home"}, null, "home");
+    console.log("ready state");
+  }
+});
 $j(function(){
 
-  $j(document).on("click", "a", function(){
+  $j(document).on("click", "#cat-list-reff li a", function(){
     var d = $j(this).attr("href");
-    window.history.pushState({data: d}, d, d);
+    window.history.pushState(
+      {
+        data: d,
+        l: "main",
+        title: "home"
+      }
+      , d, d);
+    console.dir("push: currentPage : "+ currentPage);
     //console.dir(d);
   });
+  $j(document).on("click", "#sub-item-click", function(){
+    var d = $j(this).attr("href");
+    window.history.pushState(
+      {
+        data: d,
+        l: "sub",
+        title: tempPageTitle
+      }
+      , d, d);
+    console.dir("push: currentPage : "+ currentPage);
+  });
   $j(window).on("popstate", function(e){
-    if(e.state == null){
-      if (currentPage == 2 || currentPage == 3) {
+    var state = e.originalEvent.state;
+    if (state !== null) {
+      if(state.data == "homeandgarden"){
+        console.log("not null: "+state.data + state.title);
+        getSubCategory(parent, state.data, state.title);
+      }
+      if(state.data == "home"){
         getCategory();
       }
-    }else{
-      console.dir(e.state ? e.state.data : null);
+    }else if (state === null) {
+      console.log("state is null!");
+      //window.history.pushState({data: "home"}, null, "home");
+      window.history.back();
     }
+    // console.dir(state);
+    // if(e.state == null){
+    //   console.dir(currentPage);
+    //   if (currentPage === 2) {
+    //     getCategory();
+    //   }else if (currentPage === 3) {
+    //     getSubCategory();
+    //   }
+    // }else{
+    //   console.dir(e.state ? e.state.data : null);
+    // }
   });
-  // window.onpopstate = function(e){
-  //     console.dir(e.state ? e.state.data : null);
-  // };
 
 });
 $j(document).ready(function(){
@@ -65,12 +106,17 @@ $j(document).on("click", "#cat-list-reff li a", function(e){
   var pageTitle = $j(this).find(".cat-name-span").html();
   var parent = $j("#target-for-insert-content");
   getSubCategory(parent, name, pageTitle);
-
-
+});
+$j(document).on("click", "#sub-item-click", function(e){
+  e.preventDefault();
+  var parent = $j("#target-for-insert-content");
+  var title = $j(this).find(".name-ref").html();
+  var id = $j(this).attr("href");
+  displaySubItem(parent, id, title);
 });
 function getCategory(){
-  currentPage = 1;
-  window.history.pushState({data: "d"}, "kategorier", "Kategorier");
+  //currentPage = 1;
+  //window.history.pushState({data: "d"}, "kategorier", "Kategorier");
     var parent = $j("#target-for-insert-content");
     $j(parent).load("/menu.html", function(){
       var backBtn = $j("#back-provider-button");
@@ -96,22 +142,15 @@ function getCategory(){
       });
     });
 }
-$j(document).on("click", "#sub-item-click", function(e){
-  e.preventDefault();
-  var parent = $j("#target-for-insert-content");
-  var title = $j(this).find(".name-ref").html();
-  var id = $j(this).attr("href");
-  displaySubItem(parent, id, title);
-});
 function displaySubItem(parent, id, pageTitle){
-  currentPage = 3;
+  //currentPage = 3;
   $j(parent).load("subitem.html", function(){
     var p = $j(parent).find("#page-title-text");
     $j(p).html(pageTitle);
   });
 }
 function getSubCategory(parent, name, pageTitle){
-  currentPage = 2;
+  //currentPage = 2;
   $j(parent).load("content.html", function(){
     var p = $j(parent).find("#page-title-text");
     $j(p).html(pageTitle);
@@ -131,6 +170,8 @@ function getSubCategory(parent, name, pageTitle){
         });
       }
     });
+    tempName = name;
+    tempPageTitle = pageTitle;
     //alert($j(parent).find("#content-id").html());
   });
 }
